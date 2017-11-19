@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ubuntu-base:
+    build:
+      context: ./
+      dockerfile: Dockerfile-base
+    stdin_open: true
+    tty: true
+  python:
+    build:
+      context: ./python
+      dockerfile: Dockerfile-python
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${PYTHON_PROJECTS_DIR}:/workspace

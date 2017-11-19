@@ -1,0 +1,8 @@
+FROM ubuntu:xenial
+LABEL maintainer="jheloper9102@gmail.com"
+ENV REFRESHED_AT=2017-11-19
+
+RUN sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list && \
+    apt update && \
+    apt install -y --no-install-recommends build-essential && \
+    rm -rf /var/lib/apt/lists/*
