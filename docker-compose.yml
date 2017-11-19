@@ -14,3 +14,11 @@ services:
     tty: true
     volumes:
       - ${PYTHON_PROJECTS_DIR}:/workspace
+  php5:
+    build:
+      context: ./php5
+      dockerfile: Dockerfile-php
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${PHP_PROJECTS_DIR}:/workspace
